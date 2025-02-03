@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Activities</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans">
+    <header class="bg-blue-600 text-white p-4 text-center text-xl font-bold">
+        Upcoming Activities
+    </header>
+    <div class="max-w-4xl mx-auto mt-8 p-4">
+        <div id="events-container">
+            <!-- Events will be dynamically added here -->
+        </div>
+    </div>
+    
+    <!-- Modal for Sign-Up Form -->
+    <div id="signup-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-80">
+            <h2 class="text-xl font-semibold">Sign Up</h2>
+            <input type="text" id="volunteer-name" placeholder="Your Name" class="border p-2 w-full mt-4">
+            <input type="text" id="volunteer-phone" placeholder="Your Phone Number" class="border p-2 w-full mt-4">
+            <button id="submit-signup" class="bg-blue-600 text-white px-4 py-2 rounded-lg mt-4 w-full">Submit</button>
+            <button id="close-modal" class="mt-2 text-red-500 w-full">Cancel</button>
+        </div>
+    </div>
+    
+    <script>
+        const events = [
+            { id: 1, name: "Food Distribution", date: "Feb 10, 2025", description: "Helping distribute food to those in need.", volunteers: 5 },
+            { id: 2, name: "Medical Camp", date: "Feb 15, 2025", description: "Providing free medical checkups.", volunteers: 3 },
+            { id: 3, name: "Clothes Donation", date: "Feb 20, 2025", description: "Distributing warm clothes to the homeless.", volunteers: 7 }
+        ];
+
+        function renderEvents() {
+            const container = document.getElementById("events-container");
+            container.innerHTML = "";
+            events.forEach(event => {
+                const eventCard = document.createElement("div");
+                eventCard.className = "bg-white p-6 rounded-lg shadow-md mb-4";
+                eventCard.innerHTML = `
+                    <h3 class="text-xl font-bold">${event.name}</h3>
+                    <p class="text-gray-600">${event.date}</p>
+                    <p class="mt-2">${event.description}</p>
+                    <p class="mt-2 font-semibold">Volunteers Signed Up: <span id="volunteer-count-${event.id}">${event.volunteers}</span></p>
+                    <button onclick="openSignup(${event.id})" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg">Sign Up</button>
+                `;
+                container.appendChild(eventCard);
+            });
+        }
+
+        function openSignup(eventId) {
+            document.getElementById("signup-modal").classList.remove("hidden");
+            document.getElementById("submit-signup").onclick = function() { submitSignup(eventId); };
+        }
+
+        function submitSignup(eventId) {
+            const name = document.getElementById("volunteer-name").value;
+            const phone = document.getElementById("volunteer-phone").value;
+            if (name && phone) {
+                const event = events.find(e => e.id === eventId);
+                event.volunteers += 1;
+                document.getElementById(`volunteer-count-${event.id}`).innerText = event.volunteers;
+                document.getElementById("signup-modal").classList.add("hidden");
+                document.getElementById("volunteer-name").value = "";
+                document.getElementById("volunteer-phone").value = "";
+            } else {
+                alert("Please enter both name and phone number.");
+            }
+        }
+
+        document.getElementById("close-modal").addEventListener("click", function() {
+            document.getElementById("signup-modal").classList.add("hidden");
+        });
+
+        renderEvents();
+    </script>
+</body>
+</html>

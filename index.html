@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mother Teresa Mission Centre</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        /* Additional custom styles */
+        .hero-image {
+            background-image: url('images/mt.png');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation Bar -->
+<header class="bg-blue-600 text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="text-2xl font-bold">Mother Teresa Mission Centre</div>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
+                <li><a href="services.html" class="hover:text-gray-300">Services</a></li>
+                <li><a href="about.html" class="hover:text-gray-300">About</a></li> <!-- Updated link -->
+                <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <!-- Hero Section -->
+    <section class="hero-image flex justify-center items-center text-center text-white">
+        <div class="bg-black bg-opacity-50 p-8">
+            <h1 class="text-4xl font-bold">Welcome to the Mission of Love</h1>
+            <p class="mt-4 text-xl">Join us in spreading kindness and helping those in need.</p>
+            <a href="#services" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-500">Get Involved</a>
+        </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-100 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-semibold">Our Services</h2>
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="p-6 bg-white shadow-md rounded-lg hover:shadow-xl transition-all duration-300">
+                    <img src="images/food distribution.jpg" alt="Food Distribution" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="text-xl font-bold mt-4">Food Distribution</h3>
+                    <p class="mt-2">We provide meals to those in need, offering food security to families and individuals.</p>
+                </div>
+                <!-- Service 2 -->
+                <!-- Volunteer Opportunities -->
+                <div class="p-6 bg-white shadow-md rounded-lg hover:shadow-xl transition-all duration-300">
+                <img src="images/volunteers.jpg" alt="Volunteer Opportunities" class="w-full h-40 object-cover rounded-md">
+                <h3 class="text-xl font-bold mt-4">Volunteer Opportunities</h3>
+                <p class="mt-2">Join our mission and make a difference in the community by volunteering your time.</p>
+                <a href="upcoming-activities.html" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-500">See Upcoming Activities
+                </a>
+                </div>
+                <!-- Service 3 -->
+                <div class="p-6 bg-white shadow-md rounded-lg hover:shadow-xl transition-all duration-300">
+                    <img src="images/donation.jpg"alt="Donations" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="text-xl font-bold mt-4">Donations</h3>
+                    <p class="mt-2">Your contributions help us expand our reach and support the less fortunate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold">About Us</h2>
+            <div class="mt-6">
+                <img src="https://via.placeholder.com/1200x600?text=Mission+Team" alt="Mission Team" class="w-full h-80 object-cover rounded-lg shadow-md">
+            </div>
+            <p class="mt-6 text-lg">Our mission is to bring hope and love to the world by serving the less fortunate and working towards a better tomorrow. With your support, we can achieve this vision.</p>
+        </div>
+    </section>
+
+    <!-- Carousel (Swiper) -->
+    <section id="carousel" class="py-16 bg-gray-200">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-center">Gallery</h2>
+            <div class="swiper-container mt-8">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="https://via.placeholder.com/600x400?text=Gallery+Image+1" alt="Gallery Image 1" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://via.placeholder.com/600x400?text=Gallery+Image+2" alt="Gallery Image 2" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://via.placeholder.com/600x400?text=Gallery+Image+3" alt="Gallery Image 3" class="w-full rounded-lg shadow-lg">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-blue-600 text-white text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-semibold">Get In Touch</h2>
+            <p class="mt-4 text-xl">Reach out to us and learn more about how you can get involved.</p>
+            <a href="mailto:info@motherteresamission.org" class="mt-6 inline-block bg-white text-blue-600 px-6 py-3 rounded-lg text-lg">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <p>&copy; 2025 Mother Teresa Mission Centre. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script>
+        // Initialize Swiper
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        // GSAP animation on page load
+        gsap.from('.hero-image', {
+            opacity: 0,
+            duration: 2,
+            y: -50,
+            ease: 'power3.out',
+        });
+    </script>
+</body>
+</html>
